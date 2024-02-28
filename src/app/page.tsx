@@ -1,10 +1,14 @@
 
 "use client"
-import styles from "./page.module.css"
+import { Description } from "app/components/home/Description"
+import { Hero } from "app/components/home/Hero";
+import { MainProducts } from "app/components/home/MainProducts";
 export default function Home() {
   return (
-    <main className={styles.main} >
-    <h1>Pagina de inicio</h1>
+    <main >
+      <Hero/>
+    <Description/>
+    <MainProducts/>
     </main>
   );
 }
