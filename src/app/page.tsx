@@ -2,6 +2,6 @@
 
 export default function Home() {
   return (
-    <h1>Tienda online con shopify</h1>
+    <h1>Pagina de inicio</h1>
   );
 }
