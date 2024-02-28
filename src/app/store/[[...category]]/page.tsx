@@ -1,12 +1,13 @@
 interface CategoryProps{
     params:{
-        category:string
+        categories:string[],
+        searchParams?:string
     }
 }
 /*La rutas dinamicas se ponen dentro de corchetes*/ 
 export default function Category(props:CategoryProps){
-    const{category} = props.params
+    const{categories} = props.params
     return (
-        <h1>Category dynamic:{category}</h1>
+        <h1>Category dynamic:{categories}</h1>
     )
 }
