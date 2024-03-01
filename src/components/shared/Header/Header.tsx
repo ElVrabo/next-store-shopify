@@ -1,15 +1,10 @@
 import Link from "next/link"
+import styles from "./Header.module.sass"
 export default function Header(){
    return <header>
-    <nav>
-      <ul>
-        <Link href="/">
-        <li>Home</li>
-        </Link>
-        <Link href="/store">
-        <li>Store</li>
-        </Link>
-      </ul>
+    <nav className={styles.Header} >
+      <Link href="/" >Inicio</Link>
+      <Link href="/store" >Tienda</Link>
     </nav>
   </header>
 }
