@@ -1,7 +1,9 @@
 export function Description(){
     return (
         <section>
-            <h1>Descripcion</h1>
+            <img src="/images/description.jpeg" alt="products marketplace" />
+            <h2>Description</h2>
+            <p>Descripcion de los productos</p>
         </section>
     )
 }
