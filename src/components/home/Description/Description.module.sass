@@ -14,8 +14,13 @@
 
   border-radius: 1.375rem
 
+  &__imageContainer
 
+    position: relative
 
+    width: 500px
+
+    height: 150px
   
 
   & img
@@ -27,6 +32,10 @@
    box-shadow: 0 0 4rem rgba(255, 255, 255, 0.2) 
 
   &_text
+   
+   display: flex
+   flex-direction: column
+   justify-content: center
 
    & > h2
 
@@ -37,5 +46,13 @@
     color: $color-secondary
 
     margin: 0
+
+  & > p 
+
+   font-size: 1.5rem
+
+   line-height: 1.75
+
+   color: $text-color
 
    
