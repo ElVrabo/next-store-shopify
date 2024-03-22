@@ -17,7 +17,7 @@ const getProducts = async ()=>{
 export async function MainProducts(){
 
     const products = await getProducts()
-    console.log(products)
+    
     
     return (
         <section className={styles.MainProducts}>
