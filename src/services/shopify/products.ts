@@ -23,8 +23,9 @@ export const getProducts = async (id?: string) => {
         handle: product.handle,
         tags: product.tags,
       }
+      return transformedProducts
     })
-    return transformedProducts
+   
   } catch (error) {
     console.log(error)
   }
