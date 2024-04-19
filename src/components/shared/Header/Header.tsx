@@ -2,7 +2,10 @@ import Link from "next/link"
 import styles from "./Header.module.sass"
 import { cookies } from "next/headers"
 import { validateAccesToken } from "app/utils/auth/validateAccesToken"
-import { ShoppingCart } from "../ShoppingCart"
+// import  ShoppingCart  from "../ShoppingCart"
+import dynamic from "next/dynamic"
+
+const NoSSRShoppingCart = dynamic(()=>import('../ShoppingCart'),{ssr:false})
 export default async function Header(){
 const customer = await validateAccesToken()
 
@@ -13,7 +16,7 @@ const customer = await validateAccesToken()
       <Link href="/store"  style={{textDecoration:"none",color:"violet"}}
        >Tienda</Link>
        {customer?.firstName ? (<p style={{color:"violet", marginTop:"-0px"}} >Hola: {customer.firstName}</p>) : <Link href="/login" style={{textDecoration:"none", color:"violet"}} >Login</Link>}
-       <ShoppingCart/>
+       <NoSSRShoppingCart/>
     </nav>
   </header>
 }

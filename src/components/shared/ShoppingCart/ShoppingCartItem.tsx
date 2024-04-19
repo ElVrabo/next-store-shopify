@@ -15,7 +15,7 @@ export const ShoppingCartItem = ({ item }: ShoppingCartItemProps) => {
 
   return (
     <div className={styles.ShoppingCartItem}>
-      {/* <Image src={item.image} alt={item.title} width={48} height={48} /> */}
+      <Image src={item.image} alt={item.title} width={48} height={48} />
       <div className={styles.ShoppingCartItem__itemInfo}>
         <p className={styles.ShoppingCartItem__title}>{item?.title}</p>
         <span className={styles.ShoppingCartItem__quantity}>x{item.quantity}</span>
