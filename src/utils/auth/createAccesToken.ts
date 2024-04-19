@@ -18,5 +18,6 @@ if(accessToken){
         httpOnly:true,
         sameSite:"strict"
     })
+    return accessToken
 }
 }

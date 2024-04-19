@@ -4,7 +4,7 @@ import { createUserMutation } from "app/graphql/mutations/createUserMutation"
 import { createAccesToken } from "app/utils/auth/createAccesToken"
 import { redirect } from "next/navigation"
 
-export  const handleCreateUser = async (formData:any)=>{
+export  const handleCreateUser = async (formData:FormData)=>{
     const formDataObject = Object.fromEntries(formData)
     delete formDataObject["password_confirmation"]
 const graphqlClient =  GraphQLClientSingleton.getInstance().getClient()
@@ -17,8 +17,16 @@ const variables = {
 }
 const {customerCreate} = await graphqlClient.request(createUserMutation,variables)
 const {customerUserErrors,customer} = customerCreate
-if(customer?.firstName){
-await createAccesToken(formDataObject.email, formDataObject.password)
+if(customer){
+await createAccesToken(formDataObject.email as string, formDataObject.password as string)
 redirect("/store")
+}
+}
+
+export const handleLogin = async (formData:FormData)=>{
+const formDataObject = Object.fromEntries(formData)
+const accesToken = await createAccesToken(formDataObject.email as string, formDataObject.password as string)
+if(accesToken){
+  redirect("/store")
 }
 }
